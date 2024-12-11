@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Jobs</title> 
+    <link rel="stylesheet" href="styles.css"> 
+<body>
+    <h1>Welcome to Your Web Application</h1>
+    <p>This is a simple HTML page.</p>
+
+    
+    <p id="message">No message to display.</p>
+
+    <form action="yourActionPage.html" method="post"> 
+        <label for="inputField">Enter something:</label>
+        <input type="text" id="inputField" name="inputField" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const message = urlParams.get('message');
+        if (message) {
+            document.getElementById('message').textContent = message;
+        }
+    </script>
+</body>
+</html>
